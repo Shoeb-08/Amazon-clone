@@ -1,0 +1,39 @@
+[debug] [2021-07-04T18:20:20.950Z] ----------------------------------------------------------------------
+[debug] [2021-07-04T18:20:20.952Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-07-04T18:20:20.952Z] CLI Version:   9.14.0
+[debug] [2021-07-04T18:20:20.952Z] Platform:      win32
+[debug] [2021-07-04T18:20:20.952Z] Node Version:  v14.12.0
+[debug] [2021-07-04T18:20:20.955Z] Time:          Sun Jul 04 2021 23:50:20 GMT+0530 (India Standard Time)
+[debug] [2021-07-04T18:20:20.956Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-04T18:20:20.971Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-04T18:20:20.971Z] > authorizing via signed-in user (hussainyshoeb08@gmail.com)
+[debug] [2021-07-04T18:20:20.971Z] [iam] checking project clone-19986 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-07-04T18:20:20.974Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/clone-19986:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-07-04T18:20:42.062Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. connect ETIMEDOUT 142.250.77.170:443
+[debug] [2021-07-04T18:20:42.063Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/clone-19986/serviceAccounts/clone-19986@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-07-04T18:21:03.105Z] [functions] service account IAM check errored, deploy may fail: Server Error. connect ETIMEDOUT 142.250.182.42:443 {"name":"FirebaseError","children":[],"exit":2,"message":"Server Error. connect ETIMEDOUT 142.250.182.42:443","original":{"errno":-4039,"code":"ETIMEDOUT","syscall":"connect","address":"142.250.182.42","port":443},"status":500}
+[debug] [2021-07-04T18:21:03.107Z] > refreshing access token with scopes: []
+[debug] [2021-07-04T18:21:03.107Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-04T18:21:24.160Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-07-04T18:21:35.235Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:141:12)
+    at refreshTokens (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:448:15)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Client.getAccessToken (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:144:23)
+    at async Client.addAuthHeader (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:135:21)
+    at async Client.request (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:34)
+    at async Object.getFirebaseProject (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:65:9)
+    at async C:\Users\SHOEB\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:169:17
+[error] 
+[error] Error: Failed to get Firebase project clone-19986. Please make sure the project exists and your account has permission to access it.
